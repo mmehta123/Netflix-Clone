@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
 const ListSchema = new mongoose.Schema({
-    username: { type: String, unique: true, required: true },
-    email: { type: String, unique: true, required: true },
-    password: { type: String, required: true },
-    profilePic: { type: String, default: "" },
-    isAdmin: { type: Boolean, default: false },
-}, { timestamps: true }
+    title: { type: String, unique: true, required: true },
+    type: { type: String },
+    genre: { type: String},
+    content: { type: Array },
+}, { timestamps: true,versionKey:false }
 )
 
 module.exports = mongoose.model("List", ListSchema);

@@ -7,7 +7,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 const Featured = ({type}) => {
     return (
         <div className="featured">
-            {!type && (
+            {type && (
                 <div className="category">
                     <span>{type==="movie"?"Movies":"Series"}</span>
                     <select name="genre" id="genre" >

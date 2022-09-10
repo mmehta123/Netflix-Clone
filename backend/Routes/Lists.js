@@ -7,11 +7,13 @@ const verify = require("../Middlewares/verifyToken.js");
 router.post("/", verify, async (req, res) => {
     if (req.user.isAdmin) {
         try {
-            const list = new List(req.body);
-            const newList = await list.save();
-            return res.status(201).json(newList);
+        //     const list = new List(req.body);
+        //     const newList = await list.save();
+        // return res.status(201).json(newList);
+        const list =await List.create(req.body);
+        return res.status(201).json(list);
         } catch (error) {
-            return res.status(500).json("something went wrong");
+            return res.status(500).json("something went wrong unexpectedly"+error);
         }
     } else {
         return res.status(403).json("You are not allowed");

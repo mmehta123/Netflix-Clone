@@ -1,11 +1,17 @@
 const mongoose = require('mongoose');
 
 const MovieSchema = new mongoose.Schema({
-    title: { type: String, unique: true, required: true },
-    type: { type: String },
+    title: { type: String, required: true, unique: true },
+    desc: { type: String },
+    img: { type: String },
+    imgTitle: { type: String },
+    imgSm: { type: String },
+    trailer: { type: String },
+    video: { type: String },
+    year: { type: String },
+    limit: { type: Number },
     genre: { type: String },
-    content: { type: Array },
-    isSeries: { type: Boolean, default: false }
+    isSeries: { type: Boolean, default: false },
 }, { timestamps:true,versionKey: false }
 )
 
